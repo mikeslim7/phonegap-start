@@ -27,6 +27,7 @@ var app = {
 		// This is an event handler function, which means the scope is the event.
 		// So, we must explicitly called `app.report()` instead of `this.report()`.
 		app.report('deviceready');
+
 		var myContact = navigator.contacts.create({
 			"displayName" : "Test User Cordova"
 		});
@@ -52,6 +53,7 @@ var app = {
 		document.querySelector('#' + id + ' .pending').className += ' hide';
 		var completeElem = document.querySelector('#' + id + ' .complete');
 		completeElem.className = completeElem.className.split('hide').join('');
+		document.getElementById(id).innerHTML('');
 	},
 	onSuccess : function(contacts) {
 		// onSuccess: Get a snapshot of the current contacts
