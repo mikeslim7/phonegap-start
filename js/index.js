@@ -39,7 +39,7 @@ var app = {
 
 		// find all contacts with 'Test' in any name field
 		var options = new ContactFindOptions();
-		options.filter = "E";
+		options.filter = "a";
 		var fields = [ "displayName", "name" ];
 		navigator.contacts.find(fields, app.onSuccess, app.onError, options);
 	},
