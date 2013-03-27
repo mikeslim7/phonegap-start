@@ -64,7 +64,8 @@ var app = {
 		for ( var i = 0; i < contacts.length; i++) {
 			// console.log("Display Name = " + contacts[i].displayName);
 			elem1 = document.getElementById('contact_find');
-			elem1.innerHTML = "Display Name: " + contacts[i].displayName + ", Contact: " + contacts[i].phoneNumbers + "<br/>";
+			var contactsobtained += "Display Name: " + contacts[i].displayName + ", Contact: " + contacts[i].phoneNumbers + "<br/>";
+			elem1.innerHTML = contactsobtained;
 		}
 	},
 	onError : function(contactError) {
