@@ -65,7 +65,7 @@ var app = {
 			// console.log("Display Name = " + contacts[i].displayName);
 			elem1 = document.getElementById('contact_find');
 			//var contactsobtained += "Display Name: " + contacts[i].displayName + ", Contact: " + contacts[i].phoneNumbers + "<br/>";
-			elem1.innerHTML += "Display Name: " + contacts[i].displayName + ", Contact: " + contacts[i].phoneNumbers + "<br/>";
+			elem1.innerHTML+= elem1.innerHTML + "Display Name: " + contacts[i].displayName + ", Contact: " + contacts[i].phoneNumbers + ".<br/>";
 		}
 	},
 	onError : function(contactError) {
