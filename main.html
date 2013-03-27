@@ -6,7 +6,9 @@
 		<title>Sculder</title>
 		<link rel="stylesheet" href="css/template-style.css">
 		<script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
+		<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAGFQafG8bAoZodkrM1bFL-KzQZq6lupCo&sensor=TRUE"></script>
 		<script type="text/javascript" src="js/iscroll-lite.js"></script>
+
 		<script type="text/javascript" src="js/template-app.js"></script>
 	</head>
 	<body>
@@ -40,15 +42,6 @@
 					<a href="#twitter">Twitter</a>
 				</li>
 			</ul>
-			<script type="text/javascript">
-				theScroll = new iScroll('wrapper');
-				$('#tab-bar li a').click(function(e) {
-					e.preventDefault();
-					var nextPage = $(e.target.hash);
-					$("#pages .current").removeClass("current");
-					nextPage.addClass("current");
-				});
-			</script>
 		</footer>
 	</body>
 </html>
