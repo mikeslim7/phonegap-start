@@ -1,25 +1,26 @@
-var theScroll;
+
 function scroll(){
+	var theScroll;
     theScroll = new iScroll('wrapper');
+    $('#tab-bar a').on('click', function(e){
+        e.preventDefault();
+        var nextPage = $(e.target.hash);
+        $("#pages .current").removeClass("current");
+        nextPage.addClass("current");
+    });
 }
-document.addEventListener('DOMContentLoaded', scroll, false);
+//document.addEventListener('DOMContentLoaded', scroll, false);
 document.addEventListener('deviceready', scroll, false);
 
 
-function onBodyLoad()
-{
-document.addEventListener("deviceready", scroll, false);
-
-}
-
+//function onBodyLoad()
+//{
+//document.addEventListener("deviceready", scroll, false);
+//}
 
 
-$('#tab-bar a').on('click', function(e){
-    e.preventDefault();
-    var nextPage = $(e.target.hash);
-    $("#pages .current").removeClass("current");
-    nextPage.addClass("current");
-});
+
+
 
 function page(toPage) {
     var toPage = $(toPage),
