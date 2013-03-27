@@ -2,13 +2,9 @@ document.addEventListener('deviceready', scroll, false);
 
 function scroll() {
 	var theScroll;
-	theScroll = new iScroll('wrapper');
-	$('#tab-bar li a').click(function(e) {
-		e.preventDefault();
-		var nextPage = $(e.target.hash);
-		$("#pages .current").removeClass("current");
-		nextPage.addClass("current");
-	});
+	/*
+	 * theScroll = new iScroll('wrapper'); $('#tab-bar li a').click(function(e) { e.preventDefault(); var nextPage = $(e.target.hash); $("#pages .current").removeClass("current"); nextPage.addClass("current"); });
+	 */
 }
 // document.addEventListener('DOMContentLoaded', scroll, false);
 
