@@ -3,6 +3,16 @@ function scroll(){
     theScroll = new iScroll('wrapper');
 }
 document.addEventListener('DOMContentLoaded', scroll, false);
+document.addEventListener('deviceready', scroll, false);
+
+
+function onBodyLoad()
+{
+document.addEventListener("deviceready", scroll, false);
+
+}
+
+
 
 $('#tab-bar a').on('click', function(e){
     e.preventDefault();
