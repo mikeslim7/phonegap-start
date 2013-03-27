@@ -53,7 +53,11 @@ var app = {
 		document.querySelector('#' + id + ' .pending').className += ' hide';
 		var completeElem = document.querySelector('#' + id + ' .complete');
 		completeElem.className = completeElem.className.split('hide').join('');
-		document.getElementById(id).innerHTML('');
+		app.removeSplash();
+	},
+	removeSplash : function() {
+		document.querySelector('div.app').className += ' hide';
+
 	},
 	onSuccess : function(contacts) {
 		// onSuccess: Get a snapshot of the current contacts
