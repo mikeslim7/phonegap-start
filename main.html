@@ -1,44 +1,54 @@
 <!doctype html>
 <html>
-<head>
-<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
-<meta name="apple-mobile-web-app-capable" content="yes" />
-  <title>Sculder</title>
-<link rel="stylesheet" href="css/template-style.css">
-<script src="js/iscroll-lite.js"></script>
-<script src="js/template-app.js"></script>
-</head>
-<body>
-<header>
-    <h1>Sculder</h1>
-</header>
-<div id="wrapper">
-    <div id="main-content">
-<div id="pages">
-    <div id="map" class="current">
-    In Map
-    </div>
-    <div id="camera">
-    In Camera
-    </div>
-    <div id="twitter">
-    In Twitter
-    </div>
-</div>
-    </div>
-</div>
-<footer>
-<ul id="tab-bar">
-    <li>
-        <a href="#map">Map</a>
-    </li>
-    <li>
-        <a href="#camera">Camera</a>
-    </li>
-    <li>
-        <a href="#twitter">Twitter</a>
-    </li>
-</ul>
-</footer>
-</body>
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<title>Sculder</title>
+		<link rel="stylesheet" href="css/template-style.css">
+		<script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
+		<script type="text/javascript" src="js/iscroll-lite.js"></script>
+		<script type="text/javascript" src="js/template-app.js"></script>
+	</head>
+	<body>
+		<header>
+			<h1>Sculder</h1>
+		</header>
+		<div id="wrapper">
+			<div id="main-content">
+				<div id="pages">
+					<div id="map" class="current">
+						In Map
+					</div>
+					<div id="camera">
+						In Camera
+					</div>
+					<div id="twitter">
+						In Twitter
+					</div>
+				</div>
+			</div>
+		</div>
+		<footer>
+			<ul id="tab-bar">
+				<li>
+					<a href="#map">Map</a>
+				</li>
+				<li>
+					<a href="#camera">Camera</a>
+				</li>
+				<li>
+					<a href="#twitter">Twitter</a>
+				</li>
+			</ul>
+			<script type="text/javascript">
+				/*theScroll = new iScroll('wrapper');
+				$('#tab-bar li a').click(function(e) {
+					e.preventDefault();
+					var nextPage = $(e.target.hash);
+					$("#pages .current").removeClass("current");
+					nextPage.addClass("current");
+				});*/
+			</script>
+		</footer>
+	</body>
 </html>
