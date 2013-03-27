@@ -39,7 +39,7 @@ var app = {
 
 		// find all contacts with 'Test' in any name field
 		var options = new ContactFindOptions();
-		options.filter = "Chep";
+		options.filter = "E";
 		var fields = [ "displayName", "name" ];
 		navigator.contacts.find(fields, app.onSuccess, app.onError, options);
 	},
@@ -64,7 +64,7 @@ var app = {
 		for ( var i = 0; i < contacts.length; i++) {
 			// console.log("Display Name = " + contacts[i].displayName);
 			elem1 = document.getElementById('contact_find');
-			elem1.innerHTML = "Display Name = " + contacts[i].displayName;
+			elem1.innerHTML = "Display Name: " + contacts[i].displayName + ", Contact: " + contacts[i].phoneNumbers + "<br/>";
 		}
 	},
 	onError : function(contactError) {
