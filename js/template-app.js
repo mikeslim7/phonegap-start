@@ -1,4 +1,3 @@
-
     // Wait for Cordova to load
     //
     document.addEventListener("deviceready", onDeviceReady, false);
@@ -18,6 +17,11 @@
       //  options.filter="Chep";
       //  var fields = ["displayName", "name"];
       //  navigator.contacts.find(fields, onSuccess, onError, options);
+      
+      $('#tab-bar li a').click(function(){
+          $('#map').html('attr: '+$(this).attr('id'));
+          $('#map').html('prop: '+$(this).prop('id'));
+      });
     }
 
     // onSuccess: Get a snapshot of the current contacts
