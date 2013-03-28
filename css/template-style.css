@@ -79,6 +79,9 @@ h1{
     text-decoration: none;
     -webkit-touch-callout:none;
 }
+#pages > div {
+    display: none;
+}
 #pages > div.current {
     display: block;
 }
