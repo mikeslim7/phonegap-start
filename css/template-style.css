@@ -79,9 +79,6 @@ h1{
     text-decoration: none;
     -webkit-touch-callout:none;
 }
-#pages > div {
-    display: none;
-}
 #pages > div.current {
     display: block;
 }
@@ -94,6 +91,17 @@ h1{
     position: absolute;
     top:0;left:0;
     width:100%;
+    background-color: #fff;
+}
+
+#map{
+ color: #f00;
+}
+#camera{
+ color: #0f0;
+}
+#twitter{
+ color: #00f;
 }
 .in, .out {
     -webkit-animation-timing-function: ease-in-out;
