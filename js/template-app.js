@@ -13,11 +13,16 @@ var app = {
 		document.addEventListener('deviceready', this.deviceready, false);
 	},
 	deviceready : function() {
-		// theScroll = new iScroll('wrapper');
-		$('#tab-bar li a').click(function(e) {
-			e.preventDefault();
-			alert(e.target.hash);
-			app.ViewPage(e.target.hash);
+		alert('device is ready');
+		$('#tab-bar li a').click(function() {
+
+			alert($(this).attr('href'));
+			$("#pages div.current").removeClass("current")
+			$($(this).attr('href')).addClass("current");
+
+			// e.preventDefault();
+			// alert(e.target.hash);
+			// app.ViewPage(e.target.hash);
 			/*
 			 * var nextPage = $(e.target.hash); $("#pages .current").removeClass("current"); nextPage.addClass("current");
 			 */
