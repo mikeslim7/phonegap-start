@@ -29,6 +29,19 @@
 			     	mapdiv = document.getElementById('map');
 			        mapdiv.innerHTML = "Wanting Twitter";
 			     }
+			     
+			     document.getElementById("camerabtn").addEventListener('touchstart',button1Pressed);
+            document.getElementById("twitterbtn").addEventListener('touchstart',button2Pressed);
+            function button1Pressed ()
+            {
+                alert('Button Camera Pressed');
+            }
+
+            function button2Pressed ()
+            {
+                mapdiv = document.getElementById('map');
+			        mapdiv.innerHTML = "Wanting Twitter - 2";
+            }
 		</script>
 
 
@@ -56,13 +69,13 @@
 		<footer>
 			<ul id="tab-bar">
 				<li>
-					<a href="#map" onclick="loadMapPage()">Map</a>
+					<a href="#map" onclick="loadMapPage()" id="mapbtn">Map</a>
 				</li>
 				<li>
-					<a href="#camera" onclick="loadCameraPage()">Camera</a>
+					<a href="#camera" onclick="loadCameraPage()" id="camerabtn">Camera</a>
 				</li>
 				<li>
-					<a href="#twitter" onclick="loadTwitterPage()">Twitter</a>
+					<a href="#twitter" onclick="loadTwitterPage()" id="twitterbtn">Twitter</a>
 				</li>
 			</ul>
 		</footer>
