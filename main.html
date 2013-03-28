@@ -7,21 +7,27 @@
 		<link rel="stylesheet" href="css/template-style.css">
 		<script src="phonegap.js"></script>
 		<script src="childbrowser.js"></script>
-		<script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
 		<script type="text/javascript">
 			document.addEventListener("deviceready", onDeviceReady, false);
 
 			    function onDeviceReady() {
 			        mapdiv = document.getElementById('map');
 			        mapdiv.innerHTML = "Here is the Map";
-			        bindNavButtons();
 			     }
 			     
-			     function bindNavButtons(){
-			     	$('#tab-bar li a').click(function(){
-			     		$('#map').html($(this).attr('id'));
-			     	});
-			     	
+			     function loadMapPage(){
+			     	mapdiv = document.getElementById('map');
+			        mapdiv.innerHTML = "Wanting Map";
+			     }
+			     
+			     function loadCameraPage(){
+			     	mapdiv = document.getElementById('map');
+			        mapdiv.innerHTML = "Wanting Camera";
+			     }
+			     
+			     function loadTwitterPage(){
+			     	mapdiv = document.getElementById('map');
+			        mapdiv.innerHTML = "Wanting Twitter";
 			     }
 		</script>
 
@@ -50,13 +56,13 @@
 		<footer>
 			<ul id="tab-bar">
 				<li>
-					<a href="#map">Map</a>
+					<a href="#map" onclick="loadMapPage()">Map</a>
 				</li>
 				<li>
-					<a href="#camera">Camera</a>
+					<a href="#camera" onclick="loadCameraPage()">Camera</a>
 				</li>
 				<li>
-					<a href="#twitter">Twitter</a>
+					<a href="#twitter" onclick="loadTwitterPage()">Twitter</a>
 				</li>
 			</ul>
 		</footer>
