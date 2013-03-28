@@ -77,8 +77,21 @@
 			     	$('#'+pageid).addClass('current');
 			     }
 			     
+			     function pageTo(toPage) {
+				    var toPage = $('#'+toPage),
+				    fromPage = $("#pages .current");
+				    if(toPage.hasClass("current") || toPage === fromPage) {
+				        return;
+				    };
+				    toPage.addClass("current fade in").one("webkitAnimationEnd", function(){
+				        fromPage.removeClass("current fade out");
+				        toPage.removeClass("fade in")
+				    });
+				    fromPage.addClass("fade out");
+				}
+			     
 			     document.getElementById("mapbtn").addEventListener('touchstart',loadPageReq('map'));
-			     document.getElementById("camerabtn").addEventListener('touchstart',loadPageReq('camera'));
+			     document.getElementById("camerabtn").addEventListener('touchstart',pageTo('camera'));
 		            document.getElementById("twitterbtn").addEventListener('touchstart',loadPageReq('twitter'));
 		          function button1Pressed ()
 		            {
