@@ -5,23 +5,9 @@
     // Cordova is ready
     //
     function onDeviceReady() {
-        //var myContact = navigator.contacts.create({"displayName": "Test User Cordova"});
-       // myContact.note = "This contact has a note.";
-        //console.log("The contact, " + myContact.displayName + ", note: " + myContact.note);
-        
-       // elem = document.getElementById('contact_create');
-       // elem.innerHTML = "The contact, " + myContact.displayName + ", note: " + myContact.note;
-        
-        // find all contacts with 'Test' in any name field
-       // var options = new ContactFindOptions();
-      //  options.filter="Chep";
-      //  var fields = ["displayName", "name"];
-      //  navigator.contacts.find(fields, onSuccess, onError, options);
+        mapdiv = document.getElementById('map');
+        mapdiv.innerHTML = "Here is the Map";
       
-      $('#tab-bar li a').click(function(){
-          $('#map').html('attr: '+$(this).attr('id'));
-          $('#map').html('prop: '+$(this).prop('id'));
-      });
     }
 
     // onSuccess: Get a snapshot of the current contacts
