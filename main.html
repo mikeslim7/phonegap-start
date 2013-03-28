@@ -7,6 +7,7 @@
 		<link rel="stylesheet" href="css/template-style.css">
 		<script src="phonegap.js"></script>
 		<script src="childbrowser.js"></script>
+		<script src="js/jquery-1.9.1.min.js"></script>
 	</head>
 	<body>
 		<header>
@@ -34,13 +35,13 @@
 		<footer>
 			<ul id="tab-bar">
 				<li>
-					<a href="#map" onclick="loadMapPage()" id="mapbtn">Map</a>
+					<a href="#map" id="mapbtn">Map</a>
 				</li>
 				<li>
-					<a href="#camera" onclick="loadCameraPage()" id="camerabtn">Camera</a>
+					<a href="#camera" id="camerabtn">Camera</a>
 				</li>
 				<li>
-					<a href="#twitter" onclick="loadTwitterPage()" id="twitterbtn">Twitter</a>
+					<a href="#twitter" id="twitterbtn">Twitter</a>
 				</li>
 			</ul>
 		</footer>
@@ -52,6 +53,7 @@
 			    function onDeviceReady() {
 			        mapdiv = document.getElementById('map');
 			        mapdiv.innerHTML = "Here is the Map";
+			        $('#map').html('Map Nayo?');
 			     }
 			     
 			     function loadMapPage(){
@@ -69,20 +71,15 @@
 			        mapdiv.innerHTML = "Wanting Twitter";
 			     }
 			     
-			     document.getElementById("camerabtn").addEventListener('touchstart',button1Pressed);
-            document.getElementById("twitterbtn").addEventListener('touchstart',button2Pressed);
-            document.getElementById("button1").addEventListener('touchstart',button1Pressed);
-            document.getElementById("button2").addEventListener('touchstart',button2Pressed);
-            function button1Pressed ()
-            {
-                alert('Button Camera Pressed');
-            }
+			     document.getElementById("mapbtn").addEventListener('touchstart',loadMapPage);
+			     document.getElementById("camerabtn").addEventListener('touchstart',loadCameraPage);
+		            document.getElementById("twitterbtn").addEventListener('touchstart',loadTwitterPage);
+		          function button1Pressed ()
+		            {
+		                alert('Button Camera Pressed');
+		            }
 
-            function button2Pressed ()
-            {
-                mapdiv = document.getElementById('map');
-			        mapdiv.innerHTML = "Wanting Twitter - 2";
-            }
+         
 		</script>
 	</body>
 </html>
