@@ -13,10 +13,10 @@ var app = {
 		document.addEventListener('deviceready', this.deviceready, false);
 	},
 	deviceready : function() {
-		theScroll = new iScroll('wrapper');
+		// theScroll = new iScroll('wrapper');
 		$('#tab-bar li a').click(function(e) {
 			e.preventDefault();
-
+			alert(e.target.hash);
 			app.ViewPage(e.target.hash);
 			/*
 			 * var nextPage = $(e.target.hash); $("#pages .current").removeClass("current"); nextPage.addClass("current");
@@ -25,13 +25,16 @@ var app = {
 	},
 	ViewPage : function(toPage) {
 		var toPage = $(toPage), fromPage = $("#pages .current");
+
 		if (toPage.hasClass("current") || toPage === fromPage) {
+			alert('returning');
 			return;
 		}
-		;
+
+		alert('returning not');
 		toPage.addClass("current fade in").one("webkitAnimationEnd", function() {
 			fromPage.removeClass("current fade out");
-			toPage.removeClass("fade in")
+			toPage.removeClass("fade in");
 		});
 		fromPage.addClass("fade out");
 	}
