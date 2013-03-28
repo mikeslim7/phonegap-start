@@ -7,6 +7,45 @@
 		<link rel="stylesheet" href="css/template-style.css">
 		<script src="phonegap.js"></script>
 		<script src="childbrowser.js"></script>
+	</head>
+	<body>
+		<header>
+			<h1>Sculder</h1>
+		</header>
+		<div id="wrapper">
+			<div id="main-content">
+				<div id="pages">
+					<div id="map" class="current">
+					
+						In Map
+						
+						<button id="button1">1</button>
+        <button id="button2">2</button>
+					</div>
+					<div id="camera">
+						In Camera
+					</div>
+					<div id="twitter">
+						In Twitter
+					</div>
+				</div>
+			</div>
+		</div>
+		<footer>
+			<ul id="tab-bar">
+				<li>
+					<a href="#map" onclick="loadMapPage()" id="mapbtn">Map</a>
+				</li>
+				<li>
+					<a href="#camera" onclick="loadCameraPage()" id="camerabtn">Camera</a>
+				</li>
+				<li>
+					<a href="#twitter" onclick="loadTwitterPage()" id="twitterbtn">Twitter</a>
+				</li>
+			</ul>
+		</footer>
+		
+		
 		<script type="text/javascript">
 			document.addEventListener("deviceready", onDeviceReady, false);
 
@@ -32,6 +71,8 @@
 			     
 			     document.getElementById("camerabtn").addEventListener('touchstart',button1Pressed);
             document.getElementById("twitterbtn").addEventListener('touchstart',button2Pressed);
+            document.getElementById("button1").addEventListener('touchstart',button1Pressed);
+            document.getElementById("button2").addEventListener('touchstart',button2Pressed);
             function button1Pressed ()
             {
                 alert('Button Camera Pressed');
@@ -43,42 +84,5 @@
 			        mapdiv.innerHTML = "Wanting Twitter - 2";
             }
 		</script>
-
-
-
-	</head>
-	<body>
-		<header>
-			<h1>Sculder</h1>
-		</header>
-		<div id="wrapper">
-			<div id="main-content">
-				<div id="pages">
-					<div id="map" class="current">
-						In Map
-					</div>
-					<div id="camera">
-						In Camera
-					</div>
-					<div id="twitter">
-						In Twitter
-					</div>
-				</div>
-			</div>
-		</div>
-		<footer>
-			<ul id="tab-bar">
-				<li>
-					<a href="#map" onclick="loadMapPage()" id="mapbtn">Map</a>
-				</li>
-				<li>
-					<a href="#camera" onclick="loadCameraPage()" id="camerabtn">Camera</a>
-				</li>
-				<li>
-					<a href="#twitter" onclick="loadTwitterPage()" id="twitterbtn">Twitter</a>
-				</li>
-			</ul>
-		</footer>
-		
 	</body>
 </html>
