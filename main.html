@@ -17,11 +17,9 @@
 			<div id="main-content">
 				<div id="pages">
 					<div id="map" class="current">
-					
 						In Map
 						
-						<button id="button1">1</button>
-        <button id="button2">2</button>
+						
 					</div>
 					<div id="camera">
 						In Camera
@@ -51,24 +49,27 @@
 			document.addEventListener("deviceready", onDeviceReady, false);
 
 			    function onDeviceReady() {
-			        mapdiv = document.getElementById('map');
-			        mapdiv.innerHTML = "Here is the Map";
-			        $('#map').html('Map Nayo?');
+			        //mapdiv = document.getElementById('map');
+			        //mapdiv.innerHTML = "Here is the Map";
+			        //$('#map').html('Map Nayo?');
 			     }
 			     
 			     function loadMapPage(){
-			     	mapdiv = document.getElementById('map');
-			        mapdiv.innerHTML = "Wanting Map";
+			     	//mapdiv = document.getElementById('map');
+			        //mapdiv.innerHTML = "Wanting Map";
+			        $('#map').html('Map Nayo?');
 			     }
 			     
 			     function loadCameraPage(){
-			     	mapdiv = document.getElementById('map');
-			        mapdiv.innerHTML = "Wanting Camera";
+			     	//mapdiv = document.getElementById('map');
+			        //mapdiv.innerHTML = "Wanting Camera";
+			        $('#map').html('Camera Nayo?');
 			     }
 			     
 			     function loadTwitterPage(){
-			     	mapdiv = document.getElementById('map');
-			        mapdiv.innerHTML = "Wanting Twitter";
+			     	//mapdiv = document.getElementById('map');
+			        //mapdiv.innerHTML = "Wanting Twitter";
+			        $('#map').html('Twitter Nayo?');
 			     }
 			     
 			     document.getElementById("mapbtn").addEventListener('touchstart',loadMapPage);
