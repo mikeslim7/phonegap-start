@@ -19,7 +19,7 @@
 				<div id="pages">
 					<div id="map" class="current">
 						In Map
-
+						<div id="map-canvas"/>
 					</div>
 					<div id="camera">
 						In Camera
@@ -73,12 +73,14 @@
 			 }*/
 
 			function initializeMap() {
+				alert('Init Map');
 				var mapOptions = {
 					center : new google.maps.LatLng(-34.397, 150.644),
 					zoom : 8,
 					mapTypeId : google.maps.MapTypeId.ROADMAP
 				};
-				var map = new google.maps.Map(document.getElementById("map"), mapOptions);
+				var map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions);
+				alert('Inited Map');
 			}
 
 			function loadPageReq(pageid) {
