@@ -8,6 +8,7 @@
 		<script src="phonegap.js"></script>
 		<script src="childbrowser.js"></script>
 		<script src="js/jquery-1.9.1.min.js"></script>
+		<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAGFQafG8bAoZodkrM1bFL-KzQZq6lupCo&sensor=TRUE"></script>
 	</head>
 	<body>
 		<header>
@@ -18,8 +19,7 @@
 				<div id="pages">
 					<div id="map" class="current">
 						In Map
-						
-						
+
 					</div>
 					<div id="camera">
 						In Camera
@@ -43,48 +43,64 @@
 				</li>
 			</ul>
 		</footer>
-		
-		
+
 		<script type="text/javascript">
 			document.addEventListener("deviceready", onDeviceReady, false);
 
-			    function onDeviceReady() {
-			        //mapdiv = document.getElementById('map');
-			        //mapdiv.innerHTML = "Here is the Map";
-			        //$('#map').html('Map Nayo?');
-			     }
-			     
-			     function loadMapPage(){
-			     	//mapdiv = document.getElementById('map');
-			        //mapdiv.innerHTML = "Wanting Map";
-			        $('#map').html('Map Nayo?');
-			     }
-			     
-			     function loadCameraPage(){
-			     	//mapdiv = document.getElementById('map');
-			        //mapdiv.innerHTML = "Wanting Camera";
-			        $('#map').html('Camera Nayo?');
-			     }
-			     
-			     function loadTwitterPage(){
-			     	//mapdiv = document.getElementById('map');
-			        //mapdiv.innerHTML = "Wanting Twitter";
-			        $('#map').html('Twitter Nayo?');
-			     }
-			     
-			     function loadPageReq(pageid){
-			     	$('#pages div').removeClass('current').animate({ opacity: 0}, 'fast');
-			     	$('#'+pageid).addClass('current').animate({ opacity: 1}, 'fast');
-			     }			     
-			     //document.getElementById("mapbtn").addEventListener('touchstart',loadPageReq('map'));
-			     //document.getElementById("camerabtn").addEventListener('touchstart',loadPageReq('camera'));
-		            //document.getElementById("twitterbtn").addEventListener('touchstart',loadPageReq('twitter'));
-		          function button1Pressed ()
-		            {
-		                alert('Button Camera Pressed');
-		            }
+			function onDeviceReady() {
+				//mapdiv = document.getElementById('map');
+				//mapdiv.innerHTML = "Here is the Map";
+				//$('#map').html('Map Nayo?');
+				google.maps.event.addDomListener(window, 'load', initializeMap);
+			}
 
-         
+			/*	function loadMapPage() {
+			 //mapdiv = document.getElementById('map');
+			 //mapdiv.innerHTML = "Wanting Map";
+			 $('#map').html('Map Nayo?');
+			 }
+
+			 function loadCameraPage() {
+			 //mapdiv = document.getElementById('map');
+			 //mapdiv.innerHTML = "Wanting Camera";
+			 $('#map').html('Camera Nayo?');
+			 }
+
+			 function loadTwitterPage() {
+			 //mapdiv = document.getElementById('map');
+			 //mapdiv.innerHTML = "Wanting Twitter";
+			 $('#map').html('Twitter Nayo?');
+			 }*/
+
+			function initializeMap() {
+				var mapOptions = {
+					center : new google.maps.LatLng(-34.397, 150.644),
+					zoom : 8,
+					mapTypeId : google.maps.MapTypeId.ROADMAP
+				};
+				var map = new google.maps.Map(document.getElementById("map"), mapOptions);
+			}
+
+			function loadPageReq(pageid) {
+				if ($('#pages div.current').attr('id') != pageid) {
+					$('#pages div').removeClass('current').animate({
+						opacity : 0
+					}, 'fast');
+					$('#' + pageid).addClass('current').animate({
+						opacity : 1
+					}, 'fast');
+				}
+				if (pageid == 'map')
+					google.maps.event.addDomListener(window, 'load', initializeMap);
+			}
+
+			//document.getElementById("mapbtn").addEventListener('touchstart',loadPageReq('map'));
+			//document.getElementById("camerabtn").addEventListener('touchstart',loadPageReq('camera'));
+			//document.getElementById("twitterbtn").addEventListener('touchstart',loadPageReq('twitter'));
+			function button1Pressed() {
+				alert('Button Camera Pressed');
+			}
+
 		</script>
 	</body>
 </html>
